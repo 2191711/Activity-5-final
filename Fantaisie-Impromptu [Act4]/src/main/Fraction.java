@@ -1,4 +1,5 @@
 package classes;
+
 /**
  * @author Cacho Chaz, Adrian
  */
@@ -8,67 +9,60 @@ public class Fraction {
     private int denominator;
 
     /**
-     *
-     *Our Starting 
-     *
+     * Our Starting
      */
     public Fraction() {
         numerator = 0;
         denominator = 1;
     }
+
     /**
-     *
-     *@param wholeNumVal will be added
-     *
+     * @param wholeNumVal will be added
      */
     public Fraction(int wholeNumVal) {
         this.numerator = wholeNumVal;
         denominator = 1;
     }
+
     /**
-     *@param numerator will be added
-	 *@param denominator will be added 
+     * @param numerator   will be added
+     * @param denominator will be added
      */
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
     }
+
     /**
-     *
-     *@param num will be added
-     *
+     * @param num will be added
      */
     public void setNumerator(int num) {
         numerator = num;
     }
+
     /**
      * @return returns the given numerator
-     *
-     *
      */
     public int getNumerator() {
         return numerator;
     }
+
     /**
-     *
-     *@param den is a setter for our denominator
-     *
+     * @param den is a setter for our denominator
      */
     public void setDenominator(int den) {
         denominator = den;
     }
+
     /**
      * @return our denominator
-     *
-     *
      */
     public int getDenominator() {
         return denominator;
     }
-	/**
-     *modify using math.abs
-     *
-     *
+
+    /**
+     * modify using math.abs
      */
     public String toString() {
         if (getDenominator() < 0) {
@@ -76,29 +70,26 @@ public class Fraction {
         }
         return (numerator + "/" + denominator);
     }
-/**
-     *
-     *@return double to our numerator and denominator
-     *
+
+    /**
+     * @return double to our numerator and denominator
      */
     public double toDouble() {
         return (double) numerator / denominator;
     }
+
     /**
-     * @return mixedFraction to 
-     *
-     *
+     * @return mixedFraction to
      */
     public MixedFraction toMixedFraction() {
-		//instantiation of a mixed fraction with the present value converted into mixed fraction
+        //instantiation of a mixed fraction with the present value converted into mixed fraction
         MixedFraction mixedFraction = new MixedFraction((getNumerator() / getDenominator()), (getNumerator() % getDenominator()), getDenominator());
         return mixedFraction;
     }
 
     /**
      * @param other throws another fraction
-     *@return result of the given computation
-     *
+     * @return result of the given computation
      */
     public Fraction add(Fraction other) {
         Fraction result = new Fraction();
@@ -109,10 +100,10 @@ public class Fraction {
         result.reduce();
         return result;
     }
-/**
+
+    /**
      * @param other throws another fraction
      * @return result of the given computation (subtraction)
-     *
      */
     public Fraction subtract(Fraction other) {
         Fraction result = new Fraction();
@@ -123,10 +114,10 @@ public class Fraction {
         result.reduce();
         return result;
     }
-/**
+
+    /**
      * @param other throws another fraction
      * @return result of the given computation (multiplication)
-     *
      */
     public Fraction multiplyBy(Fraction other) {
         Fraction result = new Fraction();
@@ -135,7 +126,8 @@ public class Fraction {
         result.reduce();
         return result;
     }
-/**
+
+    /**
      * @param other throws another fraction
      * @return result of the given computation (division)
      */
@@ -146,10 +138,9 @@ public class Fraction {
         result.reduce();
         return result;
     }
-/**
+
+    /**
      * reduce to our fraction
-     *
-     *
      */
     public void reduce() {
         int gcd = computeGCD(numerator, denominator); // determine the greatest common divisor of numerator and denominator
@@ -158,10 +149,9 @@ public class Fraction {
         setNumerator(newNumerator); // set the value of the new numerator for this fraction
         setDenominator(newDenominator); // set the value of the new denominator for this fraction
     }
-/**
+
+    /**
      * computes for greates common denominator
-     *
-     *
      */
     private int computeGCD(int numerator, int denominator) {
         if (denominator == 0) {
@@ -170,22 +160,20 @@ public class Fraction {
             return computeGCD(denominator, numerator % denominator);
         }
     }
-/**
+
+    /**
      * reads the whole fraction
-     * @param fraction gives the fraction as a string
      *
+     * @param fraction gives the fraction as a string
      */
     public void read(String fraction) {
-        int end = fraction.indexOf ("/"); //returns index where / is
-        if (end == -1)
-        {
-            numerator = Integer.parseInt (fraction);
+        int end = fraction.indexOf("/"); //returns index where / is
+        if (end == -1) {
+            numerator = Integer.parseInt(fraction);
             denominator = 1;
-        }
-        else
-        {
-            numerator = Integer.parseInt (fraction.substring (0, end));
-            denominator = Integer.parseInt (fraction.substring (end + 1));
+        } else {
+            numerator = Integer.parseInt(fraction.substring(0, end));
+            denominator = Integer.parseInt(fraction.substring(end + 1));
         }
         if (numerator < 0 && denominator < 0 || (numerator > 0 && denominator < 0)) //if denominator has the negative, or both are negative
         {
