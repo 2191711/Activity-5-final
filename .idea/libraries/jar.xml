@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Fantaisie-Impromptu [Act4]/jar/docs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Fantaisie-Impromptu [Act4]/jar/Fraction.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
