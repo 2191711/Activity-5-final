@@ -1,7 +1,13 @@
 package classes;
 
-/**
- * @author Cacho, Chaz Adrian B
+/*
+ * Mixed Fraction
+ *
+ * Version 2.1
+ *
+ * 19/12/2020
+ *
+ * Copyright notice
  */
 public class MixedFraction extends Fraction {
     /**
@@ -208,7 +214,8 @@ public class MixedFraction extends Fraction {
         int numerator = getNumerator();
         int denominator = getDenominator();
         int whole = getWhole();
-        Fraction fraction = new Fraction(Math.abs(numerator), Math.abs(denominator));
+        Fraction fraction = new Fraction(Math.abs(numerator),
+                Math.abs(denominator));
 
         this.reduce();
         if (whole == 0)

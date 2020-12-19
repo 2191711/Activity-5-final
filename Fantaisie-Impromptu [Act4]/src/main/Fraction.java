@@ -1,7 +1,13 @@
 package classes;
 
-/**
- * @author Cacho Chaz, Adrian
+/*
+ * Fraction
+ *
+ * Version 2.1
+ *
+ * 19/12/2020
+ *
+ * Copyright notice
  */
 public class Fraction {
     //object fields
@@ -83,7 +89,8 @@ public class Fraction {
      */
     public MixedFraction toMixedFraction() {
         //instantiation of a mixed fraction with the present value converted into mixed fraction
-        MixedFraction mixedFraction = new MixedFraction((getNumerator() / getDenominator()), (getNumerator() % getDenominator()), getDenominator());
+        MixedFraction mixedFraction = new MixedFraction((getNumerator() / getDenominator()),
+                (getNumerator() % getDenominator()), getDenominator());
         return mixedFraction;
     }
 
@@ -108,7 +115,8 @@ public class Fraction {
     public Fraction subtract(Fraction other) {
         Fraction result = new Fraction();
         int den = denominator * other.getDenominator();
-        int num = den / denominator * numerator - den / other.getDenominator() * other.getNumerator();
+        int num = den / denominator * numerator - den / other.getDenominator()
+                * other.getNumerator();
         result.setNumerator(num);
         result.setDenominator(den);
         result.reduce();

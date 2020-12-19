@@ -2,6 +2,20 @@ import classes.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/*
+ * Fraction Test
+ *
+ * Version 2.1
+ *
+ * 19/12/2020
+ *
+ * Copyright notice
+ */
+
+
+
+
+
 /**
  * JUnit tests for {@link Fraction}.
  * <p>
